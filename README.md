@@ -46,7 +46,7 @@ data1["hsc_s"]=le.fit_transform(data1["hsc_s"])
 data1["degree_t"]=le.fit_transform(data1["degree_t"])
 data1["workex"]=le.fit_transform(data1["workex"])
 data1["specialisation"]=le.fit_transform(data1["specialisation"] )     
-data1["status"]=le.fit_transform(data1["status"])
+data1["status"]=le.fit_transform(data1["status"])       
 data1 
 
 x=data1.iloc[:,:-1]
@@ -66,22 +66,56 @@ y_pred
 
 from sklearn.metrics import accuracy_score
 accuracy=accuracy_score(y_test,y_pred)
-accuracy
+print("Accuracy Score:",accuracy)
 
 from sklearn.metrics import confusion_matrix
 confusion=confusion_matrix(y_test,y_pred)
-confusion
+print("\nConfusion Matrix:\n",confusion)
+
 
 from sklearn.metrics import classification_report
 classification_report1 = classification_report(y_test,y_pred)
-print(classification_report1)
+print("\nClassification Report:\n",classification_report1)
 
+from sklearn import metrics
+cm_display=metrics.ConfusionMatrixDisplay(confusion_matrix=confusion,display_labels=[True,False])
+cm_display.plot()
 lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 
 ```
 
 ## Output:
-![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/25ed8ee4-f57e-47fa-858b-394404b5ef1b)
+### DATA:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/bcd595b2-4f5e-445b-baa0-1c65a7ae321c)
+
+### ENCODED DATA:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/5a16a10f-0d45-465b-866d-b7ad0117b9c6)
+
+### NULL FUNCTION:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/2c69320e-1691-46b8-afed-28ef073c3a6d)
+
+
+### DATA DUPLICATE:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/d82d125c-ec4d-4c02-afe0-81841c90410d)
+
+
+### ACCURACY:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/6172dd96-54eb-4b4f-9662-bf5d4f92352c)
+
+### CONFUSION MATRIX:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/645a23ca-6485-4d24-a0ab-9c06da269c4b)
+
+### CLASSIFICATION REPORT:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/35b27845-7d83-4ba3-8e07-692c50a0ea0e)
+
+### PREDICATED VALUE:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/cd69c3cc-1fe7-48bf-9548-fa8bbf3f2db6)
+
+### GRAPH:
+![image](https://github.com/kailashmuthukumaran/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/123893976/63e2f889-2cba-4d65-9684-96ec6db1fd9b)
+
+
+
 
 
 
